@@ -13,21 +13,6 @@ from telebot import TeleBot
 from telebot import types
 import sys
 
-
-#!/bin/bash
-
-# Script ka naam jo aap check karna chahte hain
-SCRIPT_NAME="c.py"
-
-# Check karen ke script chal rahi hai ya nahi
-if pgrep -f "$SCRIPT_NAME" > /dev/null; then
-    echo "$SCRIPT_NAME already running."
-else
-    echo "$SCRIPT_NAME is not running. Starting it now..."
-    # Python script ko run karne ka command
-    python $SCRIPT_NAME &
-fi
-
 # insert your Telegram bot token here
 bot = telebot.TeleBot('7378901925:AAFTtKgdkGnIpnJ6sv4Xryv2MT-RGd6M4Y8')
 
